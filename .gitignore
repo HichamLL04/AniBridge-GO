@@ -1,0 +1,62 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with Litmus
+6.out
+7.out
+8.out
+*.out
+*.prof
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# GoReleaser artifacts
+dist/
+
+# Project specific binaries
+/anibridge-go
+/miraisync
+
+# Node.js / Frontend
+node_modules/
+.svelte-kit/
+frontend/build/
+frontend/.svelte-kit/
+frontend/node_modules/
+.npm
+
+# Runtime data
+data/*.db
+data/*.db-journal
+data/*.db-shm
+data/*.db-wal
+logs/
+*.log
+
+# Configuration
+config.yml
+.env
+.env.*
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

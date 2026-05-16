@@ -1,0 +1,22 @@
+services:
+  anibridge-go:
+    image: ghcr.io/hichamll04/anibridge-go:latest
+    container_name: anibridge-go
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/config
+      - ./data:/app/data
+    environment:
+      - TZ=Europe/Madrid
+      # Override any config value via env vars:
+      # - ANIBRIDGE_GO_LOG_LEVEL=debug
+      # - ANIBRIDGE_GO_WEB_USERNAME=admin
+      # - ANIBRIDGE_GO_WEB_PASSWORD=changeme
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

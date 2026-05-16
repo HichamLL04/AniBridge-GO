@@ -1,0 +1,30 @@
+web:
+  host: 0.0.0.0
+  port: 8080
+  username: ""
+  password: ""
+  htpasswd: ""
+log_level: info
+data_dir: ./data
+mappings_url: https://github.com/anibridge/anibridge-mappings/releases/download/v3/mappings.json.zst
+scan_mode: periodic
+scan_interval: 12h
+poll_interval: 5m
+profiles: []
+provider_classes:
+  - namespace: anilist
+    type: list
+    settings: {}
+dry_run: false
+backup:
+  enabled: true
+  dir: backups
+  keep: 7
+  schedule: "0 3 * * *"
+  include: [config, database]
+sync_rules:
+  template: full
+  custom:
+    full:
+      enabled: true
+      fields: [status, progress, repeats, review, user_rating, started_at, finished_at]

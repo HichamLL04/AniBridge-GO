@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS housekeeping;
+DROP TABLE IF EXISTS pin;
+DROP TABLE IF EXISTS sync_history;
+DROP TABLE IF EXISTS animap_provenance;
+DROP TABLE IF EXISTS animap_mapping;
+DROP TABLE IF EXISTS animap_entry;
+DROP TABLE IF EXISTS animap;
